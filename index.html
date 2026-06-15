@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Mercer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --grey-light: #f4f4f4;
+      --grey-mid: #e0e0e0;
+      --grey-text: #888;
+      --accent: #e8522a;
+      --nav-h: 64px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--nav-h);
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-mid);
+      display: flex;
+      align-items: center;
+      padding: 0 2.5rem;
+      justify-content: space-between;
+    }
+
+    .nav-home {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .basketball {
+      width: 26px;
+      height: 26px;
+      display: block;
+    }
+
+    .basketball.bounce {
+      animation: bounce 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+    }
+
+    @keyframes bounce {
+      0%   { transform: translateY(0) scaleY(1) scaleX(1); }
+      20%  { transform: translateY(-14px) scaleY(1.08) scaleX(0.94); }
+      40%  { transform: translateY(0) scaleY(0.88) scaleX(1.1); }
+      60%  { transform: translateY(-7px) scaleY(1.04) scaleX(0.97); }
+      80%  { transform: translateY(0) scaleY(0.96) scaleX(1.03); }
+      100% { transform: translateY(0) scaleY(1) scaleX(1); }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 400;
+      color: var(--grey-text);
+      letter-spacing: 0.3px;
+      padding: 0;
+      transition: color 0.15s;
+    }
+
+    .nav-links button:hover,
+    .nav-links button.active {
+      color: var(--black);
+    }
+
+    /* ── PAGES ── */
+    .page {
+      display: none;
+      padding-top: var(--nav-h);
+      min-height: 100vh;
+    }
+
+    .page.visible { display: block; }
+
+    /* ── HERO / HOME ── */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 2.5rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+    }
+
+    .hero-left h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -1px;
+      color: var(--black);
+    }
+
+    .hero-left h1 em {
+      font-style: italic;
+      color: var(--grey-text);
+    }
+
+    .hero-right {
+      padding-bottom: 0.4rem;
+    }
+
+    .hero-right .role {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      margin-bottom: 1rem;
+    }
+
+    .hero-right p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      max-width: 380px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+      cursor: pointer;
+      background: none;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      font-family: 'DM Sans', sans-serif;
+      transition: color 0.15s;
+    }
+
+    .hero-cta:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .hero-divider {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      border-top: 1px solid var(--grey-mid);
+    }
+
+    .hero-stats {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 2.5rem 5rem;
+      display: flex;
+      gap: 4rem;
+    }
+
+    .stat-item {}
+
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--black);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--grey-text);
+      margin-top: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem 6rem;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-eyebrow::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: var(--grey-mid);
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-text h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .about-text p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--grey-light);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--grey-text);
+      letter-spacing: 0.5px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 2rem;
+    }
+
+    .tag {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: #555;
+      background: var(--grey-light);
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.2px;
+    }
+
+    /* ── PROJECTS ── */
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .project-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+      padding: 2.25rem 0;
+      border-bottom: 1px solid var(--grey-mid);
+      text-decoration: none;
+      color: inherit;
+      align-items: center;
+      transition: opacity 0.15s;
+    }
+
+    .project-row:first-child { border-top: 1px solid var(--grey-mid); }
+    .project-row:hover { opacity: 0.7; }
+
+    .project-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--grey-light);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--grey-text);
+      overflow: hidden;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .project-tag {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+    }
+
+    .project-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+    }
+
+    .project-desc {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.65;
+      max-width: 500px;
+    }
+
+    .project-arrow {
+      margin-top: 0.75rem;
+      font-size: 12px;
+      color: var(--grey-text);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── BLOG ── */
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 2rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--grey-mid);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.15s;
+    }
+
+    .blog-row:first-child { border-top: 1px solid var(--grey-mid); }
+    .blog-row:hover { opacity: 0.65; }
+
+    .blog-left {}
+
+    .blog-category {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      margin-bottom: 0.3rem;
+    }
+
+    .blog-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .blog-excerpt {
+      font-size: 13px;
+      color: #666;
+      margin-top: 0.35rem;
+      line-height: 1.6;
+    }
+
+    .blog-date {
+      font-size: 12px;
+      color: var(--grey-text);
+      white-space: nowrap;
+      align-self: start;
+      padding-top: 0.15rem;
+    }
+
+    /* ── SIDE HUSTLE ── */
+    .hustle-intro {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1.25;
+      max-width: 560px;
+      margin-bottom: 3rem;
+      letter-spacing: -0.4px;
+    }
+
+    .hustle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .hustle-card {
+      background: var(--grey-light);
+      border-radius: 4px;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: background 0.15s;
+    }
+
+    .hustle-card:hover { background: #ebebeb; }
+
+    .hustle-card-tag {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      margin-bottom: 1rem;
+    }
+
+    .hustle-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .hustle-card p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ── CONTACT ── */
+    .contact-intro {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1.15;
+      max-width: 520px;
+      margin-bottom: 3.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--grey-mid);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.15s;
+    }
+
+    .contact-row:first-child { border-top: 1px solid var(--grey-mid); }
+    .contact-row:hover { opacity: 0.6; }
+
+    .contact-platform {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      min-width: 100px;
+    }
+
+    .contact-value {
+      font-size: 15px;
+      font-weight: 400;
+      flex: 1;
+      padding: 0 2rem;
+    }
+
+    .contact-arrow {
+      font-size: 18px;
+      color: var(--grey-text);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--grey-mid);
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--grey-text);
+      max-width: 100%;
+    }
+
+    /* ── MOBILE ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--black);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-mid);
+      padding: 1.5rem 2.5rem;
+      flex-direction: column;
+      gap: 1.25rem;
+      z-index: 199;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu button {
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: var(--black);
+      text-align: left;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.5rem 3rem;
+        gap: 2.5rem;
+      }
+
+      .hero-left h1 { font-size: 3rem; }
+
+      .about-grid,
+      .hustle-grid { grid-template-columns: 1fr; }
+
+      .project-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .section { padding: 3.5rem 1.5rem 4rem; }
+
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <button class="nav-home" onclick="showPage('home'); bounceBall()" aria-label="Home">
+      <svg class="basketball" id="bball" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="11.5" stroke="#e8522a" stroke-width="1.5" fill="none"/>
+        <path d="M13 1.5 C13 1.5 13 24.5 13 24.5" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M1.5 13 C1.5 13 24.5 13 24.5 13" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M4.5 5.5 C8 10 8 16 4.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M21.5 5.5 C18 10 18 16 21.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <ul class="nav-links">
+      <li><button onclick="showPage('about')" data-page="about">About</button></li>
+      <li><button onclick="showPage('projects')" data-page="projects">Projects</button></li>
+      <li><button onclick="showPage('blog')" data-page="blog">Blog</button></li>
+      <li><button onclick="showPage('hustle')" data-page="hustle">Side Hustle</button></li>
+      <li><button onclick="showPage('contact')" data-page="contact">Contact</button></li>
+    </ul>
+
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button onclick="showPage('about'); toggleMobile()">About</button>
+    <button onclick="showPage('projects'); toggleMobile()">Projects</button>
+    <button onclick="showPage('blog'); toggleMobile()">Blog</button>
+    <button onclick="showPage('hustle'); toggleMobile()">Side Hustle</button>
+    <button onclick="showPage('contact'); toggleMobile()">Contact</button>
+  </div>
+
+  <!-- HOME -->
+  <div id="page-home" class="page visible">
+    <div class="hero">
+      <div class="hero-left">
+        <h1>Alex<br/><em>Mercer.</em></h1>
+      </div>
+      <div class="hero-right">
+        <p class="role">Product Designer & Strategist</p>
+        <p>I design products that feel inevitable — simple on the surface, considered underneath. Currently building at a fintech startup in Bangalore, previously at Google and two startups that didn't make it.</p>
+        <button class="hero-cta" onclick="showPage('projects')">View my work &nbsp;→</button>
+      </div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Years in the field</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24</div>
+        <div class="stat-label">Projects shipped</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Startups built</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">12M+</div>
+        <div class="stat-label">Users reached</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="page-about" class="page">
+    <div class="section">
+      <div class="section-eyebrow">About</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Curious by nature, precise by practice.</h2>
+          <p>I'm Alex — a product designer based in Bangalore with seven years of experience shaping digital products across fintech, health, and consumer apps. I obsess over the gap between what a product does and what a user actually needs.</p>
+          <p>Before going independent, I led design at Zeta and spent two years at Google's APAC office working on emerging-market UX. I've also co-founded two startups — one failed quietly, one failed loudly. Both taught me more than any job.</p>
+          <p>Outside of work: I read too much, cook just enough, and watch an embarrassing amount of NBA basketball.</p>
+          <div class="tag-list">
+            <span class="tag">Product Design</span>
+            <span class="tag">UX Research</span>
+            <span class="tag">Design Systems</span>
+            <span class="tag">Prototyping</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Strategy</span>
+            <span class="tag">0→1</span>
+          </div>
+        </div>
+        <div class="about-photo">Your photo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="page-projects" class="page">
+    <div class="section">
+      <div class="section-eyebrow">Projects & Case Studies</div>
+      <div class="project-list">
+
+        <a class="project-row" href="#">
+          <div class="project-thumb">Image</div>
+          <div class="project-meta">
+            <span class="project-tag">Fintech · 2024</span>
+            <div class="project-title">Redesigning onboarding for a neo-bank serving first-time account holders</div>
+            <div class="project-desc">How we reduced drop-off by 41% by rethinking the onboarding flow from the ground up — starting with what users were actually afraid of.</div>
+            <div class="project-arrow">Read case study &nbsp;→</div>
+          </div>
+        </a>
+
+        <a class="project-row" href="#">
+          <div class="project-thumb">Image</div>
+          <div class="project-meta">
+            <span class="project-tag">Health · 2023</span>
+            <div class="project-title">A medication tracker built around forgetfulness, not discipline</div>
+            <div class="project-desc">Designing for non-compliance — what happens when you stop blaming users and start designing around human behaviour.</div>
+            <div class="project-arrow">Read case study &nbsp;→</div>
+          </div>
+        </a>
+
+        <a class="project-row" href="#">
+          <div class="project-thumb">Image</div>
+          <div class="project-meta">
+            <span class="project-tag">Consumer · 2022</span>
+            <div class="project-title">Building a design system for a team of 40 with zero process</div>
+            <div class="project-desc">From scattered components and six shades of "the same blue" to a token-based system that actually got adopted.</div>
+            <div class="project-arrow">Read case study &nbsp;→</div>
+          </div>
+        </a>
+
+        <a class="project-row" href="#">
+          <div class="project-thumb">Image</div>
+          <div class="project-meta">
+            <span class="project-tag">Research · 2021</span>
+            <div class="project-title">What 200 field interviews taught me about designing for Tier 3 India</div>
+            <div class="project-desc">A research-led redesign of a payments app used by street vendors — context, constraints, and what we got wrong the first time.</div>
+            <div class="project-arrow">Read case study &nbsp;→</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG -->
+  <div id="page-blog" class="page">
+    <div class="section">
+      <div class="section-eyebrow">Blog & Writeups</div>
+      <div class="blog-list">
+
+        <a class="blog-row" href="#">
+          <div class="blog-left">
+            <div class="blog-category">Design</div>
+            <div class="blog-title">The problem with "clean" design is that it's often just empty</div>
+            <div class="blog-excerpt">Minimalism isn't a shortcut. Here's what I mean when I say something is considered versus just stripped down.</div>
+          </div>
+          <div class="blog-date">May 2025</div>
+        </a>
+
+        <a class="blog-row" href="#">
+          <div class="blog-left">
+            <div class="blog-category">Process</div>
+            <div class="blog-title">How I run a design critique without it turning into a vibe check</div>
+            <div class="blog-excerpt">A practical guide to getting useful feedback instead of "I think it needs more breathing room."</div>
+          </div>
+          <div class="blog-date">Mar 2025</div>
+        </a>
+
+        <a class="blog-row" href="#">
+          <div class="blog-left">
+            <div class="blog-category">Career</div>
+            <div class="blog-title">What two failed startups actually taught me about product thinking</div>
+            <div class="blog-excerpt">The lessons weren't about what I built. They were about what I assumed.</div>
+          </div>
+          <div class="blog-date">Jan 2025</div>
+        </a>
+
+        <a class="blog-row" href="#">
+          <div class="blog-left">
+            <div class="blog-category">Research</div>
+            <div class="blog-title">On interviewing users who don't want to be interviewed</div>
+            <div class="blog-excerpt">Field research in low-trust environments — and how I stopped making people feel like they were being studied.</div>
+          </div>
+          <div class="blog-date">Nov 2024</div>
+        </a>
+
+        <a class="blog-row" href="#">
+          <div class="blog-left">
+            <div class="blog-category">Tools</div>
+            <div class="blog-title">I stopped using Figma auto-layout for a month. Here's what happened.</div>
+            <div class="blog-excerpt">A small experiment in constraint — and what it clarified about how I think about space.</div>
+          </div>
+          <div class="blog-date">Sep 2024</div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDE HUSTLE -->
+  <div id="page-hustle" class="page">
+    <div class="section">
+      <div class="section-eyebrow">Side Hustle</div>
+      <p class="hustle-intro">Things I build, teach, and sell on the side — because one job was never enough.</p>
+      <div class="hustle-grid">
+
+        <a class="hustle-card" href="#">
+          <div class="hustle-card-tag">Template · Gumroad</div>
+          <h3>The Design Handoff Kit</h3>
+          <p>A Figma template system for handing off to developers cleanly — annotations, spec sheets, and a decision log. Used by 1,400+ designers.</p>
+        </a>
+
+        <a class="hustle-card" href="#">
+          <div class="hustle-card-tag">Newsletter · Substack</div>
+          <h3>Once a Week, Considered</h3>
+          <p>A short weekly essay on design, products, and the odd observation about how things work. 3,200 subscribers. No sponsors, no fluff.</p>
+        </a>
+
+        <a class="hustle-card" href="#">
+          <div class="hustle-card-tag">Mentorship · ADPList</div>
+          <h3>1:1 Design Mentoring</h3>
+          <p>I take on four mentees per quarter — early-career designers looking to move from execution to strategic thinking. Waitlist open.</p>
+        </a>
+
+        <a class="hustle-card" href="#">
+          <div class="hustle-card-tag">Course · Coming Soon</div>
+          <h3>Research Without a Lab</h3>
+          <p>A self-paced course on doing meaningful UX research with no budget, no team, and no research ops. Launching late 2025.</p>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="page-contact" class="page">
+    <div class="section">
+      <div class="section-eyebrow">Contact</div>
+      <p class="contact-intro">Let's talk — about a project, a question, or just something interesting.</p>
+      <div class="contact-links">
+        <a class="contact-row" href="mailto:alex@alexmercer.com">
+          <span class="contact-platform">Email</span>
+          <span class="contact-value">alex@alexmercer.com</span>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a class="contact-row" href="#" target="_blank" rel="noopener">
+          <span class="contact-platform">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/alexmercer</span>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a class="contact-row" href="#" target="_blank" rel="noopener">
+          <span class="contact-platform">Twitter / X</span>
+          <span class="contact-value">@alexmercer</span>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a class="contact-row" href="#" target="_blank" rel="noopener">
+          <span class="contact-platform">GitHub</span>
+          <span class="contact-value">github.com/alexmercer</span>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a class="contact-row" href="#" target="_blank" rel="noopener">
+          <span class="contact-platform">Read.cv</span>
+          <span class="contact-value">read.cv/alexmercer</span>
+          <span class="contact-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2025 Alex Mercer</span>
+    <span>Bangalore, India · Available for select freelance work</span>
+  </footer>
+
+  <script>
+    function showPage(name) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('visible'));
+      const t = document.getElementById('page-' + name);
+      if (t) t.classList.add('visible');
+      document.querySelectorAll('[data-page]').forEach(b => {
+        b.classList.toggle('active', b.dataset.page === name);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function bounceBall() {
+      const ball = document.getElementById('bball');
+      ball.classList.remove('bounce');
+      void ball.offsetWidth;
+      ball.classList.add('bounce');
+      ball.addEventListener('animationend', () => ball.classList.remove('bounce'), { once: true });
+    }
+
+    function toggleMobile() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
