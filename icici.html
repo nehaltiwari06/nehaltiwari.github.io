@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICICI Bank — Net-Banking Portal Revamp | Neha Tiwari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-home" href="index.html" aria-label="Home">
+      <svg class="basketball" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="11.5" stroke="#e8522a" stroke-width="1.5" fill="none"/>
+        <path d="M13 1.5 C13 1.5 13 24.5 13 24.5" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M1.5 13 C1.5 13 24.5 13 24.5 13" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M4.5 5.5 C8 10 8 16 4.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M21.5 5.5 C18 10 18 16 21.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hustle.html">Side Hustle</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="hustle.html">Side Hustle</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- CASE STUDY -->
+  <div class="page">
+
+    <div class="case-hero">
+      <a class="case-nav-back" href="projects.html">← Back to projects</a>
+      <div class="case-tag">Fintech · Net-Banking Redesign · India</div>
+      <h1>Revamping net-banking for one of India's biggest banks — with me as their only UX resource</h1>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <div class="label">Role</div>
+          <div class="value">UX Designer</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Team</div>
+          <div class="value">UX Designer (me) + Senior Visual Designer</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Duration</div>
+          <div class="value">6 months</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Methodology</div>
+          <div class="value">Waterfall</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-body">
+
+      <img src="images/icici_01_doodle_intro.jpg" alt="Doodle: stakeholders asking for a net banking dashboard 'by tomorrow', met with a firm 'Umm, no'" />
+      <figcaption>"We want a Net Banking Dashboard. Can you do one by tomorrow?" — "Umm. No."</figcaption>
+
+      <p>One of the biggest banks in the country wanted to redesign their net-banking portal — with me as their only UX resource.</p>
+
+      <h2>The Brief</h2>
+      <p>ICICI Bank wanted to revamp its net banking portal for all customer segments, aiming to:</p>
+      <ul>
+        <li>Increase discoverability and conversions of certain transactions</li>
+        <li>Better use the real-estate for cross-sell</li>
+        <li>Create synergy between the net banking portal and the mobile app</li>
+      </ul>
+
+      <img src="images/icici_02_dashboard_photo.jpg" alt="Early product screenshot of the ICICI net banking dashboard" />
+
+      <h2>The Challenges — Business Side</h2>
+      <p><strong>Dealing with a stubborn giant.</strong> Designing for a well-established, profitable corporate with a set way of doing things meant not only dealing with a lot of resistance, but also making them think design.</p>
+      <p><strong>Too many product verticals.</strong> Account types, insurances, loans, services, deposits, funds, investments, cards — all different parts of the bank, each with their own quarterly plans and their own claim to space on the dashboard.</p>
+      <p><strong>Effects of hierarchy.</strong> A very top-down way of working meant a lot of decisions got lost somewhere between the umpteen levels that had to sign off on approvals.</p>
+      <p><strong>Data not being utilised.</strong> ICICI had a robust Business Intelligence unit, but that data wasn't yet being used to shape a better banking experience.</p>
+      <p><strong>Three platforms, three experiences.</strong> The net-banking portal, the retail mobile app, and the m-site were all running independently, with slightly different user bases and very different experiences. A larger vision was needed to unify things.</p>
+      <p><strong>A wide, loyal user-base.</strong> Users had been on the platform for years — any big change risked immediate backlash, so we had to move one careful step at a time.</p>
+
+      <h2>The Challenges — Design & Implementation</h2>
+      <p><strong>Banking as a business.</strong> It was crucial to understand how a bank works and makes profit, to prioritise content from both sides — the user wants their account details, the bank is trying to push loans and insurance.</p>
+      <p><strong>Feature monster.</strong> Pages and pages of content built over previous content, with a need to ensure every user could access everything at all times, had led to a lot of overlap and redundancy — making the site cluttered.</p>
+      <p><strong>A no-scroll policy.</strong> Heatmaps of the previous design showed most users weren't scrolling down to see content — so proposing anything that required a scroll wasn't an option.</p>
+      <p><strong>Getting BIU data.</strong> Understanding what platform was used for which transactions, and the top transactions on net-banking, meant extracting data that was tedious to get to, even with BIU's cooperation.</p>
+
+      <blockquote>"Our users are not requesting for services through the portal."</blockquote>
+
+      <h2>My Approach: Ideate. Iterate. Test.</h2>
+
+      <h2>1. Streamline the content to get rid of redundant data</h2>
+      <p>I was told there were more than 800 pages overall on the portal. To design the primary navigation, I first had to re-create the entire information architecture, identify overlaps, and propose a new one.</p>
+      <p>Are deposits... investments? Is my account the same as my bank account? Can investments and insurance be clubbed together? Can bill payment and fund transfer be clubbed? The answers to these very basic questions translated to big efforts.</p>
+
+      <img src="images/icici_03_content_mapping.jpg" alt="Content mapping diagram showing the reorganized information architecture for ICICI's net banking portal" />
+      <figcaption>Multiple discussions went into understanding the business vs. the user requirement. We landed on an IA that was simple to navigate, enhancing discoverability overall.</figcaption>
+
+      <h2>2. Prioritise the design plan based on data</h2>
+      <p>After a lot of pushing, we got data on the top 5 transactions, the most-used features, and the most-used services on the desktop net-banking portal. Data on top service-related interactions revealed that users were raising requests for fund transfers and bill payments — features that already existed on the portal. Alongside the user data, the business wanted to push transactions like bill payment and opening Fixed Deposits — essentially, any transaction that would increase dependency on the portal.</p>
+
+      <img src="images/icici_04_data_tables.jpg" alt="Data tables showing top 5 transactions and top service-related interactions on the ICICI net banking portal" />
+
+      <h2>3. Introduce scalability</h2>
+      <p>I started by identifying the important information for each component, then testing the same components for different customer segments. Even when designing the navigation, we went with a standard top and left navigation, since it wasn't only the most scalable option — it also reduced the shock of shifting for existing users.</p>
+
+      <img src="images/icici_05_lowfi_wireframes.jpg" alt="Low-fidelity hand-drawn wireframes exploring component-based design" />
+      <figcaption>Exploring component-based design through low-fidelity wireframes.</figcaption>
+
+      <h2>4. Adding in a layer of intelligence</h2>
+      <p>ICICI, being the second largest bank in the country, had an unfathomable amount of user data. But it wouldn't make sense to just show available data — what was needed was interpretation of that data, to aid conversion. We also decided to do away with banner ads, so the dashboard would feel more like a personal space instead of a marketplace.</p>
+
+      <img src="images/icici_06_intelligence_mockups.jpg" alt="Dashboard mockups showing personalized suggestions, gamified account tiers, and contextual calls to action" />
+      <figcaption>Interpreting user behaviour to suggest relevant, contextual solutions — replacing banner ads with embedded, useful prompts, and gamifying discovery through account tiers and health scores.</figcaption>
+
+      <h2>The New Dashboard: Changes, Big and Small</h2>
+      <p>To modernise the platform, we did away with an upfront menu and introduced a jumbo menu instead. Search was made more prominent, and a quick link to services was added to increase discoverability and usage. Most-used services were brought up top, with the idea to eventually let users customise it to their needs. All critical and frequent information, actions, and transactions were given more visual weight — and every component was designed with day-zero requirements in mind, to maximise engagement for a brand new user.</p>
+
+      <img src="images/icici_07_new_dashboard.jpg" alt="The final redesigned ICICI net banking dashboard" />
+
+      <h2>Usability Testing</h2>
+      <p>We tested with 10 users — 5 existing ICICI users and 5 users of competitor platforms — across the dashboard and product landing pages, rating on familiarity, discoverability, enhancement, and recall of the cross-sell.</p>
+      <p><strong>Key takeaways:</strong> discoverability of the new dashboard improved noticeably compared to the previous one, though users still hit friction navigating and spotting calls to action.</p>
+      <p><strong>What that meant for design:</strong> we tightened up confidentiality cues, affordances, CTA positioning, nomenclature and copy, and the discoverability of navigation itself.</p>
+
+      <img src="images/icici_08_other_pages.jpg" alt="Other redesigned pages: zero-state, inside pages, and the service request tracker" />
+      <figcaption>The zero-state converted every component into a cross-sell space in the absence of active engagement. Inside pages began unifying the experience between the mobile app and the net-banking portal. A new service tracker introduced simpler, more relatable categories with clearer copy.</figcaption>
+
+      <h2>Visual Design: Must Look Different, But Feel the Same</h2>
+      <img src="images/icici_09_visual_design_final.jpg" alt="Final visual design of the ICICI dashboard across desktop and mobile" />
+
+      <h2>The Result</h2>
+      <p>As told by the Head of Product Development, Digital Banking & Payments at ICICI, the Q4 FY20 results directly attributed to the interface revamp were:</p>
+      <ul>
+        <li><strong>100%</strong> increase in service traffic</li>
+        <li><strong>25%</strong> improvement in service conversion</li>
+        <li><strong>20%</strong> improvement in customer satisfaction score, across transactions like statements and opening FDs</li>
+      </ul>
+      <blockquote>Turn the titanic, a little at a time.</blockquote>
+
+      <h2>What I Took Away</h2>
+      <p>I was always very critical of the digital banking experience at conventional banks — until I found myself working for one. The sheer complexity of the organisation made me realise that even a small change was a big deal for them; it could take months to implement, but bring big returns. I became a more pragmatic designer, and understood the meaning of "doing something is better than doing nothing."</p>
+
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Neha Tiwari</span>
+    <span>India · Available for select opportunities</span>
+  </footer>
+
+</body>
+</html>
