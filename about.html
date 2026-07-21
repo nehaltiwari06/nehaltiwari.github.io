@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Neha Tiwari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-home" href="index.html" aria-label="Home">
+      <svg class="basketball" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="11.5" stroke="#e8522a" stroke-width="1.5" fill="none"/>
+        <path d="M13 1.5 C13 1.5 13 24.5 13 24.5" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M1.5 13 C1.5 13 24.5 13 24.5 13" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M4.5 5.5 C8 10 8 16 4.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M21.5 5.5 C18 10 18 16 21.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hustle.html">Side Hustle</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="hustle.html">Side Hustle</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="page">
+    <div class="section">
+      <div class="section-eyebrow">About</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Curious by nature, precise by practice.</h2>
+          <p>I'm Neha — a UX designer with four years of experience shaping digital products, mostly in fintech and B2B, with detours into motor, entertainment, and oil & gas along the way. I obsess over the gap between what a product does and what a user actually needs.</p>
+          <p>I did my post-graduation in Graphic Design from MITID, and naturally found my way to UX design by the end of the course. Since then, I've worked at a UX design consultancy in Mumbai, across both agile and waterfall teams.</p>
+          <p>What's next? I'm looking to work with a product firm — somewhere I get exposure to data, and the process involves making gradual, measurable changes. New B2B and B2C products excite me immensely. I want to work with a team that challenges and inspires me.</p>
+          <div class="tag-list">
+            <span class="tag">UX Design</span>
+            <span class="tag">UX Research</span>
+            <span class="tag">Service Design</span>
+            <span class="tag">Design Systems</span>
+            <span class="tag">Prototyping</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Agile & Waterfall</span>
+          </div>
+        </div>
+        <div class="about-photo">Your photo</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Neha Tiwari</span>
+    <span>India · Available for select opportunities</span>
+  </footer>
+
+</body>
+</html>
