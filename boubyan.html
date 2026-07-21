@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boubyan Bank — Corporate Banking Portal | Neha Tiwari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-home" href="index.html" aria-label="Home">
+      <svg class="basketball" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="11.5" stroke="#e8522a" stroke-width="1.5" fill="none"/>
+        <path d="M13 1.5 C13 1.5 13 24.5 13 24.5" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M1.5 13 C1.5 13 24.5 13 24.5 13" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M4.5 5.5 C8 10 8 16 4.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M21.5 5.5 C18 10 18 16 21.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hustle.html">Side Hustle</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="hustle.html">Side Hustle</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- CASE STUDY -->
+  <div class="page">
+
+    <div class="case-hero">
+      <a class="case-nav-back" href="projects.html">← Back to projects</a>
+      <div class="case-tag">Fintech · Corporate Banking · Kuwait</div>
+      <h1>Designing corporate banking from scratch — as the only UX designer in the room</h1>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <div class="label">Role</div>
+          <div class="value">UX Lead</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Team</div>
+          <div class="value">1 UX Lead (me) + 2 Visual Designers</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Deliverable</div>
+          <div class="value">Mobile App + Desktop Website</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Methodology</div>
+          <div class="value">Agile</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-body">
+
+      <img src="images/01_doodle_intro.jpg" alt="Doodle: 'Let's get some real data guys!' — a sketch of the team dynamic on day one" />
+      <figcaption>"Umm, this is just an integration exercise. UX?" — Tech Head, on my first day.</figcaption>
+
+      <p>I spent 6 months at an Islamic bank in Kuwait advocating for user experience and design thinking. In parallel — as the only UX designer onboard — I was designing their entire Corporate Banking Portal from the ground up.</p>
+
+      <h2>The Brief</h2>
+      <ul>
+        <li>Re-design for scalability, with a focus on usability</li>
+        <li>Guide the visual design team to execute the same</li>
+        <li>Manage implementation alongside the development team</li>
+      </ul>
+
+      <img src="images/02_laptop_photo.jpg" alt="The Boubyan corporate banking dashboard on a laptop, with the approval center in view" />
+      <figcaption>Why was Boubyan building Corporate Banking at all? A lot of their SME clients were managing entire businesses through personal retail banking accounts — there was no dedicated product for them.</figcaption>
+
+      <h2>The Challenges</h2>
+      <p>My introduction to the team just meant another hand to make things faster — not a seat at the table. A few things stacked up against us from day one.</p>
+
+      <p><strong>We entered mid-way.</strong> Design decisions were already locked in by the time I joined. The challenge wasn't to start clean — it was to make a U-turn, begin again, and not make it feel like a tornado to everyone who'd already signed off on the old plan.</p>
+
+      <p><strong>Nobody quite understood what UX was for.</strong> The whole ecosystem was biased toward tech and development. Getting a seat in requirement sessions meant proving, repeatedly, that design wasn't just "making it look nice after the fact."</p>
+
+      <p><strong>There was no data, no BIU.</strong> No usage statistics existed to base decisions on. We'd have to start monitoring only after the soft launch — which meant a lot of early calls were made on informed assumption, not evidence.</p>
+
+      <p><strong>Islamic banking added a layer most of us hadn't designed for.</strong> Compliance rules shaped what we could and couldn't simplify, and a lot of stakeholders were more comfortable thinking in Arabic-first, locally-rooted patterns than in "globally accepted" UX conventions.</p>
+
+      <blockquote>"Currently, no one is using the portal. We need to tell them we're here."</blockquote>
+
+      <h2>My Approach</h2>
+      <p><em>Empathise. Sensitise. Collaborate. Create.</em></p>
+
+      <p>The first move wasn't to design — it was to understand how much was already built and what process was being followed. I sat with the squad first: the developers needed reusable components, the PO needed better-looking screens, the backend integrations weren't ready, and the design sprint was already behind the development sprint. Everyone was moving, just not together.</p>
+
+      <p>That led to a hard conversation. We decided to re-look at the entire UI kit, redesign scalable components, and redo the previous sprints' work.</p>
+
+      <blockquote>"What! You want to re-do all the UI components and make all the previous journeys again?" — the squad, on hearing the plan<br/>"Yes." — me</blockquote>
+
+      <p>It set us back initially — but it created a "delta" between design and development sprints that gave us real breathing room to plan ahead, instead of constantly playing catch-up.</p>
+
+      <p>From there, we focused on the smallest details: multiple rounds of stakeholder review before final delivery on every journey, and a defined process for fixing bugs with QA so sprint timelines didn't get derailed. Once the PO saw the benefit, research and testing started getting pushed into every requirement session going forward — not as an afterthought, but as part of planning.</p>
+
+      <h2>The Strategy: Make It Like Water</h2>
+      <p>The guiding principle: build something so scalable it could change without effort later.</p>
+      <ul>
+        <li>Identified every template already on the platform</li>
+        <li>Converted every journey into a simple 3-step navigation</li>
+        <li>Focused only on usability enhancement — no designing based on assumptions</li>
+        <li><strong>Desktop:</strong> simple, fixed primary menu</li>
+        <li><strong>Mobile:</strong> shifted from bottom navigation to a hamburger menu</li>
+      </ul>
+      <p>The reasoning was practical: post-launch, once real usage data started coming in, this base needed to evolve without breaking everything underneath it. A simple structure meant the shift would feel gradual to users, not jarring.</p>
+
+      <img src="images/03_weekly_demo_photo.jpg" alt="Weekly stakeholder demo session with the team gathered around screens" />
+      <figcaption>Weekly demos kept every stakeholder — from Tech Heads to Sharia compliance — in the loop as the build progressed.</figcaption>
+
+      <h2>From Sketch to Screen</h2>
+      <p>Because most of this work was usability enhancement rather than net-new design, the routine stayed simple: read the story, gather requirements with the Tech Head and PO, sketch low-fi or high-fi depending on what the requirement needed, walk it through with the team for sign-off, then iterate with developers as the build came together.</p>
+
+      <img src="images/04_lowfi_sketches.jpg" alt="Low-fidelity sketches and notebook work for request flows and service history screens" />
+      <figcaption>Early sketches — working through request flows, service history, and transaction detail screens before anything went to high-fidelity.</figcaption>
+
+      <img src="images/05_hifi_masterflow.jpg" alt="High-fidelity screens for transfers and cards, plus the onboarding master flow diagram" />
+      <figcaption>High-fidelity screens for transfers, cards, and the onboarding master flow — mapping every decision point a user could hit end to end.</figcaption>
+
+      <p>Fixing the navigation required multiple rounds of discussion with internal stakeholders. We tested several structures based on the new sitemap before landing on a simple 3-step navigation with a side menu — for both desktop and mobile.</p>
+
+      <img src="images/06_sitemap_screens.jpg" alt="Sitemap, navigation structure, and approval flow screens" />
+
+      <h2>The Product</h2>
+      <img src="images/07_product_devices.jpg" alt="Final desktop and mobile product views of the Boubyan corporate banking portal" />
+      <p><strong>Desktop — for larger corporates:</strong> bulk transfers, salary uploads, and a dedicated approval center.</p>
+      <p><strong>Mobile — primarily for SMEs:</strong> super-maker-checker flows, timely push notifications, and the ability to re-initiate failed transfers on the go.</p>
+
+      <h2>The Result</h2>
+      <blockquote>"The time is always right to do what is right." — Martin Luther King Jr.</blockquote>
+      <ul>
+        <li>Created a <strong>2-week delta</strong> between the design sprint and the development sprint — giving the team real room to plan ahead instead of constantly catching up</li>
+        <li>Delivered a fully scalable product, ready to adapt to new requirements as they came in</li>
+        <li>Brought on a dedicated UX researcher for future research and testing</li>
+        <li>Ran our <strong>very first user research and usability test session</strong> — for one of the core journeys on the retail app</li>
+      </ul>
+
+      <h2>What I Took Away</h2>
+      <p>This project pulled out leadership instincts I didn't know I had. Leading a team through this — not just designing for it — forced me to internalize the fundamentals in a way that sticks, and to find ways to actually convey those ideas to people who didn't start out believing they needed them. It made me respect design's role in an organization's growth in a much more grounded way than any brief ever could.</p>
+
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Neha Tiwari</span>
+    <span>India · Available for select opportunities</span>
+  </footer>
+
+</body>
+</html>

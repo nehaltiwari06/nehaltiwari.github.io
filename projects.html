@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Neha Tiwari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-home" href="index.html" aria-label="Home">
+      <svg class="basketball" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="11.5" stroke="#e8522a" stroke-width="1.5" fill="none"/>
+        <path d="M13 1.5 C13 1.5 13 24.5 13 24.5" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M1.5 13 C1.5 13 24.5 13 24.5 13" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M4.5 5.5 C8 10 8 16 4.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M21.5 5.5 C18 10 18 16 21.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hustle.html">Side Hustle</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="hustle.html">Side Hustle</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="page">
+    <div class="section">
+      <div class="section-eyebrow">Projects & Case Studies</div>
+      <div class="project-list">
+
+        <a class="project-row" href="boubyan.html">
+          <div class="project-thumb"><img src="images/07_product_devices.jpg" alt="Boubyan Bank corporate banking portal" /></div>
+          <div class="project-meta">
+            <span class="project-tag">Fintech · Corporate Banking · Kuwait</span>
+            <div class="project-title">Designing corporate banking from scratch, as the only UX designer in the room</div>
+            <div class="project-desc">6 months at an Islamic bank in Kuwait, building an entire Corporate Banking Portal solo — while convincing a team that had never worked with UX that design wasn't just "making it look nice."</div>
+            <div class="project-arrow">Read case study &nbsp;→</div>
+          </div>
+        </a>
+
+        <a class="project-row" href="#">
+          <div class="project-thumb">Image</div>
+          <div class="project-meta">
+            <span class="project-tag">Health · 2023</span>
+            <div class="project-title">A medication tracker built around forgetfulness, not discipline</div>
+            <div class="project-desc">Designing for non-compliance — what happens when you stop blaming users and start designing around human behaviour.</div>
+            <div class="project-arrow">Read case study &nbsp;→</div>
+          </div>
+        </a>
+
+        <a class="project-row" href="#">
+          <div class="project-thumb">Image</div>
+          <div class="project-meta">
+            <span class="project-tag">Consumer · 2022</span>
+            <div class="project-title">Building a design system for a team of 40 with zero process</div>
+            <div class="project-desc">From scattered components and six shades of "the same blue" to a token-based system that actually got adopted.</div>
+            <div class="project-arrow">Read case study &nbsp;→</div>
+          </div>
+        </a>
+
+        <a class="project-row" href="#">
+          <div class="project-thumb">Image</div>
+          <div class="project-meta">
+            <span class="project-tag">Research · 2021</span>
+            <div class="project-title">What 200 field interviews taught me about designing for Tier 3 India</div>
+            <div class="project-desc">A research-led redesign of a payments app used by street vendors — context, constraints, and what we got wrong the first time.</div>
+            <div class="project-arrow">Read case study &nbsp;→</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Neha Tiwari</span>
+    <span>India · Available for select opportunities</span>
+  </footer>
+
+</body>
+</html>
