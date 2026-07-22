@@ -576,6 +576,128 @@
       padding: 0;
     }
 
+    /* ── KEYWORD MIND-MAP ── */
+    .mindmap-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 6rem 2.5rem 6rem;
+    }
+
+    .mindmap-canvas {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      background: var(--white);
+    }
+
+    .mindmap-canvas svg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .mindmap-nodes {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .mm-center {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      background: var(--black);
+      color: var(--white);
+      padding: 16px 26px;
+      border-radius: 50%;
+      white-space: nowrap;
+      z-index: 2;
+    }
+
+    .mm-node-wrap {
+      position: absolute;
+      animation: mmFloat ease-in-out infinite;
+    }
+
+    .mm-node {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      font-weight: 500;
+      color: #333;
+      background: var(--grey-light);
+      padding: 7px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      border: 1px solid var(--grey-mid);
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .mm-node:hover {
+      transform: translate(-50%, -50%) scale(1.08) !important;
+    }
+
+    .mm-node.mm-added {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+    }
+
+    .mindmap-input-row {
+      display: flex;
+      gap: 8px;
+      margin: 2rem auto 0;
+      max-width: 420px;
+    }
+
+    .mindmap-input-row input {
+      flex: 1;
+      padding: 11px 16px;
+      border: 1px solid var(--grey-mid);
+      border-radius: 20px;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+    }
+
+    .mindmap-input-row input:focus {
+      border-color: var(--black);
+    }
+
+    .mindmap-input-row button {
+      padding: 11px 20px;
+      border: 1px solid var(--black);
+      background: var(--black);
+      color: var(--white);
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .mindmap-input-row button:hover { opacity: 0.8; }
+
+    .mindmap-hint {
+      text-align: center;
+      font-size: 12px;
+      color: var(--grey-text);
+      margin-top: 0.75rem;
+    }
+
+    .mm-line-wrap {
+      animation: mmFloat ease-in-out infinite;
+    }
+
+    @keyframes mmFloat {
+      0%, 100% { transform: translate(0px, 0px); }
+      50% { transform: translate(3px, -6px); }
+    }
+
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -587,6 +709,10 @@
       }
 
       .hero-left h1 { font-size: 3rem; }
+
+      .mindmap-canvas { height: 620px; }
+      .mm-node { font-size: 11px; padding: 6px 11px; }
+      .mm-center { font-size: 18px; padding: 12px 20px; }
 
       .about-grid,
       .hustle-grid { grid-template-columns: 1fr; }
@@ -639,33 +765,16 @@
 
   <!-- HOME -->
   <div id="page-home" class="page visible">
-    <div class="hero">
-      <div class="hero-left">
-        <h1>Alex<br/><em>Mercer.</em></h1>
+    <!-- KEYWORD MIND-MAP -->
+    <div class="mindmap-section">
+      <div class="mindmap-canvas" id="mindmapCanvas">
+        <svg id="mmLines"></svg>
+        <div class="mindmap-nodes" id="mmNodes"></div>
       </div>
-      <div class="hero-right">
-        <p class="role">Product Designer & Strategist</p>
-        <p>I design products that feel inevitable — simple on the surface, considered underneath. Currently building at a fintech startup in Bangalore, previously at Google and two startups that didn't make it.</p>
-        <a class="hero-cta" href="projects.html">View my work &nbsp;→</a>
-      </div>
-    </div>
-    <div class="hero-divider"></div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">7</div>
-        <div class="stat-label">Years in the field</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">24</div>
-        <div class="stat-label">Projects shipped</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Startups built</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">12M+</div>
-        <div class="stat-label">Users reached</div>
+
+      <div class="mindmap-input-row">
+        <input id="mmInput" type="text" placeholder="Add something to my kitty" maxlength="40" onkeydown="if(event.key==='Enter')mmAddKeyword()" />
+        <button onclick="mmAddKeyword()">Add</button>
       </div>
     </div>
   </div>
@@ -897,6 +1006,156 @@
     function toggleMobile() {
       document.getElementById('mobileMenu').classList.toggle('open');
     }
+
+    /* ── KEYWORD MIND-MAP ── */
+    (function() {
+      const MM_DEFAULT_KEYWORDS = [
+        "Agentic Products", "Micro-agents", "AI-Native Design", "0\u21921 Builds",
+        "B2B SaaS", "Human-Centred Problem Framing", "Fintech Transformation",
+        "Design Systems", "Basketball", "Doodling", "Storytelling"
+      ];
+
+      const navEntries = performance.getEntriesByType("navigation");
+      const isReload = navEntries.length && navEntries[0].type === "reload";
+      if (isReload) {
+        sessionStorage.removeItem('mm_added_keywords');
+      }
+
+      function mmGetAdded() {
+        try {
+          return JSON.parse(sessionStorage.getItem('mm_added_keywords') || '[]');
+        } catch (e) { return []; }
+      }
+
+      function mmSaveAdded(list) {
+        sessionStorage.setItem('mm_added_keywords', JSON.stringify(list));
+      }
+
+      function mmSeededRandom(seed) {
+        const x = Math.sin(seed) * 10000;
+        return x - Math.floor(x);
+      }
+
+      function mmSquigglyPath(x1, y1, x2, y2, seed) {
+        const dx = x2 - x1, dy = y2 - y1;
+        const len = Math.sqrt(dx * dx + dy * dy);
+        const ux = dx / len, uy = dy / len;
+        const px = -uy, py = ux;
+        const segments = 5;
+        const amplitude = 5 + mmSeededRandom(seed) * 3;
+        const points = [];
+        for (let i = 0; i <= segments; i++) {
+          const t = i / segments;
+          const baseX = x1 + dx * t;
+          const baseY = y1 + dy * t;
+          const edgeFade = Math.sin(t * Math.PI);
+          const wave = Math.sin(t * Math.PI * 2.5 + seed) * amplitude * edgeFade;
+          points.push([baseX + px * wave, baseY + py * wave]);
+        }
+        let d = `M ${points[0][0]} ${points[0][1]}`;
+        for (let i = 1; i < points.length; i++) {
+          const [cx0, cy0] = points[i - 1];
+          const [nx, ny] = points[i];
+          const mx = (cx0 + nx) / 2, my = (cy0 + ny) / 2;
+          d += ` Q ${cx0} ${cy0} ${mx} ${my}`;
+        }
+        d += ` L ${points[points.length - 1][0]} ${points[points.length - 1][1]}`;
+        return d;
+      }
+
+      function mmRender() {
+        const canvas = document.getElementById('mindmapCanvas');
+        if (!canvas) return;
+        const svg = document.getElementById('mmLines');
+        const nodesEl = document.getElementById('mmNodes');
+        const W = canvas.clientWidth;
+        const H = canvas.clientHeight;
+        const cx = W / 2, cy = H / 2;
+
+        const added = mmGetAdded();
+        const allKeywords = MM_DEFAULT_KEYWORDS.concat(added);
+
+        svg.innerHTML = '';
+        nodesEl.innerHTML = '';
+        svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+        const center = document.createElement('div');
+        center.className = 'mm-center';
+        center.style.left = cx + 'px';
+        center.style.top = cy + 'px';
+        center.textContent = 'Nehal';
+        nodesEl.appendChild(center);
+
+        const n = allKeywords.length;
+        const isMobile = W < 600;
+        const baseRadius = Math.min(W, H) / 2 - (isMobile ? 60 : 90);
+        // Angular jitter capped well below the gap between neighbouring keywords, so
+        // words never swing into each other's slot regardless of keyword count.
+        const angleStep = (2 * Math.PI) / n;
+        const maxAngleJitter = Math.min(angleStep * 0.28, 0.22);
+
+        allKeywords.forEach((kw, i) => {
+          const seed = i * 12.9898;
+          const angleJitter = (mmSeededRandom(seed) - 0.5) * 2 * maxAngleJitter;
+          // Alternate near/far radius bands so angularly-close neighbours still end up
+          // physically separated, instead of relying on jitter alone.
+          const band = i % 3 === 0 ? 0.62 : (i % 3 === 1 ? 0.85 : 1.0);
+          const radiusJitter = (mmSeededRandom(seed + 1) - 0.5) * 0.08;
+          const angle = i * angleStep - Math.PI / 2 + angleJitter;
+          const radius = baseRadius * (band + radiusJitter);
+          const x = cx + radius * Math.cos(angle);
+          const y = cy + radius * Math.sin(angle);
+          const rotate = (mmSeededRandom(seed + 2) - 0.5) * 6;
+          const fontSize = 11 + mmSeededRandom(seed + 3) * 3;
+          const floatDuration = 3.5 + mmSeededRandom(seed + 4) * 2.5;
+          const floatDelay = mmSeededRandom(seed + 5) * -6;
+
+          const lineWrap = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+          lineWrap.setAttribute('class', 'mm-line-wrap');
+          lineWrap.style.animationDuration = floatDuration + 's';
+          lineWrap.style.animationDelay = floatDelay + 's';
+
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('d', mmSquigglyPath(cx, cy, x, y, seed));
+          path.setAttribute('stroke', '#e0e0e0');
+          path.setAttribute('stroke-width', '1');
+          path.setAttribute('fill', 'none');
+          lineWrap.appendChild(path);
+          svg.appendChild(lineWrap);
+
+          const nodeWrap = document.createElement('div');
+          nodeWrap.className = 'mm-node-wrap';
+          nodeWrap.style.left = x + 'px';
+          nodeWrap.style.top = y + 'px';
+          nodeWrap.style.animationDuration = floatDuration + 's';
+          nodeWrap.style.animationDelay = floatDelay + 's';
+
+          const node = document.createElement('div');
+          const isAddedKeyword = i >= MM_DEFAULT_KEYWORDS.length;
+          node.className = 'mm-node' + (isAddedKeyword ? ' mm-added' : '');
+          node.style.fontSize = fontSize + 'px';
+          node.style.setProperty('transform', `translate(-50%, -50%) rotate(${rotate}deg)`);
+          node.textContent = kw;
+
+          nodeWrap.appendChild(node);
+          nodesEl.appendChild(nodeWrap);
+        });
+      }
+
+      window.mmAddKeyword = function() {
+        const input = document.getElementById('mmInput');
+        const val = input.value.trim();
+        if (!val) return;
+        const added = mmGetAdded();
+        added.push(val);
+        mmSaveAdded(added);
+        input.value = '';
+        mmRender();
+      };
+
+      document.addEventListener('DOMContentLoaded', mmRender);
+      window.addEventListener('resize', mmRender);
+    })();
   </script>
 </body>
 </html>
