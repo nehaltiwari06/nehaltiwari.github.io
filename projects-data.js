@@ -39,8 +39,8 @@ const PROJECTS = [
     tag: "B2B · Target Setting Tool · India",
     title: "Replacing a bank's spreadsheets with a connected target-setting platform",
     desc: "Designing a centrally connected tool for yearly target setting across an entire banking ecosystem — branch to zone, zone to region, region to vertical.",
-    thumb: "",
-    link: "",
-    status: "coming-soon"
+    thumb: "images/sparsh_09_visual_design.jpg",
+    link: "sparsh.html",
+    status: "live"
   }
 ];

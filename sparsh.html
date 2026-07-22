@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sparsh+ — Bank of Baroda | Neha Tiwari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-home" href="index.html" aria-label="Home">
+      <svg class="basketball" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="11.5" stroke="#e8522a" stroke-width="1.5" fill="none"/>
+        <path d="M13 1.5 C13 1.5 13 24.5 13 24.5" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M1.5 13 C1.5 13 24.5 13 24.5 13" stroke="#e8522a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M4.5 5.5 C8 10 8 16 4.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M21.5 5.5 C18 10 18 16 21.5 20.5" stroke="#e8522a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="hustle.html">Side Hustle</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="hustle.html">Side Hustle</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- CASE STUDY -->
+  <div class="page">
+
+    <div class="case-hero">
+      <a class="case-nav-back" href="projects.html">← Back to projects</a>
+      <div class="case-tag">B2B · Target Setting Tool · India</div>
+      <h1>Sparsh+: replacing a bank's spreadsheets with a connected target-setting platform</h1>
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <div class="label">Role</div>
+          <div class="value">Senior UX Designer</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Team</div>
+          <div class="value">Consultant (BCG) + Senior UX Designer (me) + Senior Visual Designer</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Challenge</div>
+          <div class="value">Navigation · Content · Time</div>
+        </div>
+        <div class="case-meta-item">
+          <div class="label">Client</div>
+          <div class="value">Bank of Baroda</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-body">
+
+      <img src="images/sparsh_01_doodle_intro.jpg" alt="Doodle of consultants pitching a business target setting tool to Bank of Baroda, captioned 'they think it can't be more than a 3 day job'" />
+      <figcaption>A group of consultants wanted to pitch a business target setting and amending tool to Bank of Baroda — and they thought it couldn't be more than a 3-day job.</figcaption>
+
+      <h2>About</h2>
+      <p>BOB envisioned replacing their existing Excel sheets with a more advanced tool that could assimilate and interpret data, connecting an entire ecosystem that was currently working in silos. The goal was to eliminate errors and delays in yearly target setting, across every vertical and every level.</p>
+
+      <h2>The Brief</h2>
+      <p>To design a centrally connected, multi-faceted target-setting tool for the entire ecosystem — branch to zone, zone to region, and region to vertical and central planning.</p>
+
+      <img src="images/sparsh_02_brief_tablet.jpg" alt="Tablet mockup of the Sparsh+ zone overview dashboard, showing parameters received, pending, submitted, and validated" />
+
+      <h2>Our Design Process</h2>
+      <p>Despite limited time, we decided to understand the process completely by creating process flow documents and analysing the nature of content this system would hold. Although this took up some time initially, it really eased the process for us toward the end.</p>
+
+      <h2>1. Workflow</h2>
+      <p>A bird's-eye view of what exactly happens in the process of target setting. The objective was to identify the important events, decision points, and stages — this helped me quickly absorb the entire process and bring everyone on the team onto the same page.</p>
+
+      <img src="images/sparsh_03_workflow.jpg" alt="Target setting pre-March workflow diagram, showing zonal, regional, and branch representation" />
+
+      <h2>2. Taskflows</h2>
+      <p>Zooming into the process flows was important to understand the micro-level tasks happening between two stages. This helped us identify which parts were manual versus system-dependent, and thus redesign certain tasks that weren't very optimised — while also helping us absorb and analyse the decision-making cycle.</p>
+
+      <img src="images/sparsh_04_taskflows.jpg" alt="Task flow diagram for zone to region target setting, for a single vertical" />
+
+      <h2>3. Content Model</h2>
+      <p>Taking a step back, we decided to model the entire content. The objective was to look at target setting as a concept detached from what was currently being done at Bank of Baroda — cracking the most intuitive and natural content buckets, rooted down to the smallest data point.</p>
+
+      <img src="images/sparsh_05_content_model.jpg" alt="Mind map content model for target setting, covering status, region targets, area details, people involved, cascading, and activities" />
+
+      <h2>4. Wireframes</h2>
+      <p>The biggest challenge was creating a navigation that suited all levels — be it central planning, zonal planning, or regional planning teams. The end goal was to make the entire system intuitive and easy to comprehend.</p>
+
+      <img src="images/sparsh_06_wireframes.jpg" alt="Wireframes for the central planning validation dashboard, showing pending and completed parameters" />
+
+      <h2>Navigation, Monitoring & the Cascading Sheet</h2>
+      <p>We identified that the basic task for every team was to validate and follow up with those under them — with this insight, we created primary, secondary, and tertiary navigation for each team, keeping the primary navigation consistent across all of them. A simple listing gave an at-a-glance idea of how much work was pending versus completed, in a specific branch or region. The cascading sheet needed to be a lot more dynamic — the space where teams set their yearly targets, considering past performance and other important context — so we made it comprehensive by providing every feature in one space.</p>
+
+      <img src="images/sparsh_07_navigation_cascading.jpg" alt="Navigation structure, zone and region monitoring screens, and the cascading target sheet" />
+
+      <h2>Parameter Reports & Status Tracking</h2>
+      <p>A cumulative report across all verticals, zones, regions, and branches gave a quick status update at a glance. Each level had multiple roles, and their view was divided according to what was completed and what was pending at each stage — received, pending, submitted, and cascaded.</p>
+
+      <img src="images/sparsh_08_parameter_reports.jpg" alt="Parameter report screen across all verticals, and a received/pending/submitted breakdown for a zone" />
+
+      <h2>Visual Design</h2>
+      <img src="images/sparsh_09_visual_design.jpg" alt="Final visual design of the Sparsh+ zone overview dashboard on desktop" />
+      <img src="images/sparsh_10_visual_design_detail.jpg" alt="Detailed zone dashboard showing growth rates, regional comparisons, and historical data for Ahmedabad zone" />
+
+      <h2>What I Took Away</h2>
+      <p>What looked like it could be wrapped up in three days turned into a project that touched every level of a banking ecosystem — branch, zone, region, and central planning — each with their own way of working. Building a navigation and a cascading sheet flexible enough to serve all of them, without flattening what made each team's process work, was the real design problem hiding underneath a "simple" target-setting tool.</p>
+
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Neha Tiwari</span>
+    <span>India · Available for select opportunities</span>
+  </footer>
+
+</body>
+</html>
