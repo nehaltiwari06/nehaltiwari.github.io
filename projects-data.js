@@ -23,9 +23,17 @@ const PROJECTS = [
     tag: "Fintech · Digital Finance · Kuwait",
     title: "Rebuilding a digital finance journey that only converted 1 in 54,000 users",
     desc: "A conversion-focused redesign of a retail digital finance journey — from funnel analysis to a full service design blueprint.",
-    thumb: "",
-    link: "",
-    status: "coming-soon"
+    thumb: "images/murabaha_04_data_funnel.jpg",
+    link: "murabaha.html",
+    status: "live"
+  },
+  {
+    tag: "Fintech · Investment Management · India",
+    title: "Voyager by Truenorth: digitising how a private equity firm cracks a deal",
+    desc: "Deconstructing what a 'deal' actually is, then rebuilding it into a platform three different roles — partners, VPs, and analysts — could each trust.",
+    thumb: "images/voyager_15_visual_design_detail.jpg",
+    link: "voyager.html",
+    status: "live"
   },
   {
     tag: "B2B · Target Setting Tool · India",
